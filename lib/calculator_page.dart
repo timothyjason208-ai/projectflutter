@@ -31,85 +31,116 @@ class CalculatorPage extends StatelessWidget {
         title: const Text("My Kalkulator"),
       ),
 
-      body: Column(
-        children: [
-          // Input angka 1
-          CustomTextfield(
-            myHint: "Input angka 1",
-            txtController: txtangka1,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            // Input angka 1
+            CustomTextfield(
+              myHint: "Input angka 1",
+              txtController: txtangka1,
+            ),
 
-          // Input angka 2
-          CustomTextfield(
-            myHint: "Input angka 2",
-            txtController: txtangka2,
-          ),
+            const SizedBox(height: 10),
 
-          // Tombol tambah
-          ElevatedButton(
-            onPressed: () {
-              if (!cekInput()) return;
+            // Input angka 2
+            CustomTextfield(
+              myHint: "Input angka 2",
+              txtController: txtangka2,
+            ),
 
-              controller.tambah(
-                double.parse(txtangka1.text),
-                double.parse(txtangka2.text),
-              );
-            },
-            child: const Text("Tambah"),
-          ),
+            const SizedBox(height: 16),
 
-          // Tombol kurang
-          ElevatedButton(
-            onPressed: () {
-              if (!cekInput()) return;
+            // Tombol Operasi Berwarna Menyamping (Wrap)
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              alignment: WrapAlignment.center,
+              children: [
+                // Tombol Tambah (Biru)
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                  ),
+                  onPressed: () {
+                    if (!cekInput()) return;
 
-              controller.kurang(
-                double.parse(txtangka1.text),
-                double.parse(txtangka2.text),
-              );
-            },
-            child: const Text("Kurang"),
-          ),
+                    controller.tambah(
+                      double.parse(txtangka1.text),
+                      double.parse(txtangka2.text),
+                    );
+                  },
+                  child: const Text("Tambah"),
+                ),
 
-          // Tombol kali
-          ElevatedButton(
-            onPressed: () {
-              if (!cekInput()) return;
+                // Tombol Kurang (Oranye)
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    foregroundColor: Colors.white,
+                  ),
+                  onPressed: () {
+                    if (!cekInput()) return;
 
-              controller.kali(
-                double.parse(txtangka1.text),
-                double.parse(txtangka2.text),
-              );
-            },
-            child: const Text("Kali"),
-          ),
+                    controller.kurang(
+                      double.parse(txtangka1.text),
+                      double.parse(txtangka2.text),
+                    );
+                  },
+                  child: const Text("Kurang"),
+                ),
 
-          // Tombol bagi
-          ElevatedButton(
-            onPressed: () {
-              if (!cekInput()) return;
+                // Tombol Kali (Ungu)
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    foregroundColor: Colors.white,
+                  ),
+                  onPressed: () {
+                    if (!cekInput()) return;
 
-              controller.bagi(
-                double.parse(txtangka1.text),
-                double.parse(txtangka2.text),
-              );
-            },
-            child: const Text("Bagi"),
-          ),
+                    controller.kali(
+                      double.parse(txtangka1.text),
+                      double.parse(txtangka2.text),
+                    );
+                  },
+                  child: const Text("Kali"),
+                ),
 
-          const SizedBox(height: 20),
+                // Tombol Bagi (Hijau)
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                  ),
+                  onPressed: () {
+                    if (!cekInput()) return;
 
-          // Menampilkan hasil
-          Obx(
-            () => Text(
-              "Hasil: ${controller.hasilHitung.value}",
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+                    controller.bagi(
+                      double.parse(txtangka1.text),
+                      double.parse(txtangka2.text),
+                    );
+                  },
+                  child: const Text("Bagi"),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 20),
+
+            // Menampilkan hasil
+            Obx(
+              () => Text(
+                "Hasil: ${controller.hasilHitung.value}",
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
