@@ -10,12 +10,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "Belajar Flutter GetX",
-      initialRoute: Routes.registration,
+      initialRoute: Routes.list_makanan,
       getPages: Routes.myPages,
     );
   }

@@ -1,0 +1,103 @@
+import 'package:get/get.dart';
+import 'package:kalkulator/models/makanan_model.dart';
+
+class ListMakananController extends GetxController {
+  List<MakananModel> dataMakanan = [
+    MakananModel(
+      namaMakanan: "Nasi Goreng", 
+      harga: "15.000", 
+      gambar: "assets/images/Nasi-Goreng-telor.jpg", 
+      deskripsi: " berasal dari Indonesia",
+      rating: "4.8",
+      review: "Rasanya sangat lezat, gurih, dan pas di lidah! Recommended banget.",
+    ),
+    MakananModel(
+      namaMakanan: "Mie Ayam", 
+      harga: "12.000", 
+      gambar: "assets/images/mie ayam.jpg", 
+      deskripsi: "berasal dari Jawa",
+      rating: "4.5",
+      review: "Mie ayam yang lezat dan harganya terjangkau.",
+    ),
+    MakananModel(
+      namaMakanan: "Bakso", 
+      harga: "15.000", 
+      gambar: "assets/images/bakso.jpeg", 
+      deskripsi: "berasal dari Malang",
+      rating: "4.2",
+      review: "kuahnya sangat lezat dan baksonya sangat kenyal.",
+    ),
+    MakananModel(
+      namaMakanan: "Sate Ayam", 
+      harga: "20.000", 
+      gambar: "assets/images/sate ayam.jpeg", 
+      deskripsi: "berasal dari Madura",
+      rating: "4.7", 
+      review: "Sate ayam yang empuk dan bumbu kacangnya sangat lezat.", 
+    ),
+    MakananModel(
+      namaMakanan: "Rendang", 
+      harga: "25.000", 
+      gambar: "assets/images/rendang.jpg", 
+      deskripsi: "berasal dari Padang",  
+      rating: "4.9", 
+      review: "Rendang yang kaya rempah dan dagingnya sangat empuk.", 
+    ),
+    MakananModel(
+      namaMakanan: "Ayam Geprek", 
+      harga: "12.000", 
+      gambar: "assets/images/ayam geprek.jpeg", 
+      deskripsi: "berasal dari Indonesia",
+      rating: "4.6",
+      review: "Ayam geprek yang renyah dan pedasnya pas di lidah.",
+    ),
+    MakananModel(
+      namaMakanan: "Soto Ayam", 
+      harga: "15.000", 
+      gambar: "assets/images/soto ayam.jpeg", 
+      deskripsi: " berasal dari Jawa",
+      rating: "4.3", 
+      review: "Kuah soto ayam yang gurih dan segar, cocok untuk sarapan.",
+    ),
+    MakananModel(
+      namaMakanan: "Ikan Bakar", 
+      harga: "12.000", 
+      gambar: "assets/images/ikan bakar.jpeg", 
+      deskripsi: "berasal dari Malaysia",
+      rating: "4.1",
+      review: "Ikan bakar yang lezat dan bumbunya sangat enak.",
+    ),
+    MakananModel(
+      namaMakanan: "Bubur Ayam", 
+      harga: "15.000", 
+      gambar: "assets/images/bubur ayam.jpeg", 
+      deskripsi: "berasal dari China",
+      rating: "4.4",
+      review: "Bubur ayam yang lezat dan gizi lengkap.",
+    ),
+    MakananModel(
+      namaMakanan: "Ayam Bakar", 
+      harga: "20.000", 
+      gambar: "assets/images/ayam bakar.jpeg", 
+      deskripsi: "berasal dari Asia Tenggara",
+      rating: "4.5",
+      review: "Ayam bakar yang lezat dan bumbunya sangat enak.",
+    ),
+    MakananModel(
+      namaMakanan: "Nasi Uduk", 
+      harga: "25.000", 
+      gambar: "assets/images/nasi uduk.jpeg", 
+      deskripsi: "berasal dari betawi",
+      rating: "4.6",
+      review: "Nasi uduk yang lezat dan bumbunya sangat enak.",
+    ),
+    MakananModel(
+      namaMakanan: "Kwetiau", 
+      harga: "12.000", 
+      gambar: "assets/images/kwetiau.jpeg", 
+      deskripsi: "berasal dari Tiongkok",
+      rating: "4.2",
+      review: "Kwetiau yang lezat dan teksturnya pas di lidah.",
+    ),
+  ].obs;
+}

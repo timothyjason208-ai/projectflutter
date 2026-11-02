@@ -13,7 +13,6 @@ class RegistrationPage extends StatelessWidget {
     final TextEditingController txtEmail = TextEditingController();
     final TextEditingController txtNoWa = TextEditingController();
     
-    // Variabel RxnString untuk dropdown jenis kelamin
     final RxnString selectedJenisKelamin = RxnString();
 
     return Scaffold(
@@ -23,10 +22,10 @@ class RegistrationPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // 1. Nama Lengkap (Background Kuning)
+
             Container(
               decoration: BoxDecoration(
-                color: Colors.yellow[100], // Kuning lembut
+                color: Colors.yellow[100], 
                 borderRadius: BorderRadius.circular(10),
               ),
               child: MyTextfield(
@@ -37,10 +36,9 @@ class RegistrationPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            // 2. Email (Background Merah)
             Container(
               decoration: BoxDecoration(
-                color: Colors.red[100], // Merah lembut
+                color: Colors.red[100], 
                 borderRadius: BorderRadius.circular(10),
               ),
               child: MyTextfield(
@@ -51,10 +49,9 @@ class RegistrationPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            // 3. Nomor WhatsApp (Background Hijau)
             Container(
               decoration: BoxDecoration(
-                color: Colors.green[100], // Hijau lembut
+                color: Colors.green[100],
                 borderRadius: BorderRadius.circular(10),
               ),
               child: MyTextfield(
@@ -65,15 +62,14 @@ class RegistrationPage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
 
-            // 4. Jenis Kelamin (Dropdown dengan warna dinamis: Biru untuk Laki-laki, Pink untuk Perempuan)
             Obx(() => Container(
               decoration: BoxDecoration(
-                // Berubah warna otomatis sesuai pilihan jenis kelamin
+                
                 color: selectedJenisKelamin.value == "Laki-laki" 
-                    ? Colors.blue[100] 
+                     ? Colors.blue[100] 
                     : selectedJenisKelamin.value == "Perempuan" 
                         ? Colors.pink[100] 
-                        : Colors.grey[200], // Abu-abu jika belum dipilih
+                        : Colors.grey[200], 
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButtonFormField<String>(
@@ -81,7 +77,7 @@ class RegistrationPage extends StatelessWidget {
                 hint: const Text("Jenis Kelamin"),
                 dropdownColor: selectedJenisKelamin.value == "Laki-laki" 
                     ? Colors.blue[50] 
-                    : Colors.pink[50], // Warna menu dropdown saat dibuka
+                    : Colors.pink[50], 
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -103,10 +99,10 @@ class RegistrationPage extends StatelessWidget {
             )),
             const SizedBox(height: 24),
 
-            // Tombol Kirim
+
             ElevatedButton(
               onPressed: () {
-                // Validasi: Cek apakah jenis kelamin sudah dipilih
+
                 if (selectedJenisKelamin.value == null) {
                   Get.snackbar(
                     "Peringatan", 
@@ -118,7 +114,6 @@ class RegistrationPage extends StatelessWidget {
                   return; 
                 }
 
-                // Pindah halaman dan kirim data
                 Get.toNamed(
                   Routes.confirm_registration,
                   arguments: {
