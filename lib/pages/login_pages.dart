@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-
+import 'package:kalkulator/controllers/login_controller.dart';
+import 'package:get/get.dart';
 class LoginPages extends StatelessWidget {
-  const LoginPages({super.key});
+  LoginPages({super.key});
 
   final controller = Get.put(LoginController());
   @override
